@@ -1,0 +1,50 @@
+{
+  "name": "dsh-open-access",
+  "description": "DSH Open Access: keyless browser entry, LAN hostname access, and a Tailscale address alias for a DeepSeek Harness web profile",
+  "version": "0.1.0",
+  "author": "spark5",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://example.com/your-name/dsh-open-access.git"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./alias": "./lib/alias.js",
+    "./patch/*.yml": "./patch/*.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/*.js",
+    "patch/*.yml",
+    "locale/*.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "tailscale",
+    "lan"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node scripts/serve.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.5",
+    "@deepseek-ai/schemastery": "~3.18.5"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./patch/cordis.patch.yml"
+    },
+    "manifestVersion": 1
+  }
+}

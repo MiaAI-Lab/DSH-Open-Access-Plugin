@@ -1,0 +1,12 @@
+# DSH Open Access (npm package dsh-open-access) bundle patch: mount the plugin, so the
+# defaults do the work (noAuth on, both aliases on, hosts auto-detected).
+# Per-deployment values (extra trusted hosts, toggles) belong in the profile's
+# own cordis.patch.yml, targeting this row by id:
+#
+#   - id: open-access
+#     config:
+#       trustedHosts: [myhost.example]   # merged with the detected ones
+#       noAuth: false                    # restore the ?token= gate
+- insert:
+    - id: open-access
+      name: dsh-open-access
